@@ -10,8 +10,8 @@ export const SharedLayout = () => {
           <Link to="/" end>
             Home
           </Link>
-          <Link to="/movies">Movies</Link>
-          <Link to="/products">Products</Link>
+          {/* <Link to="/movies">Movies</Link>
+          <Link to="/products">Products</Link> */}
         </nav>
       </Header>
       <Suspense fallback={<div>Loading page...</div>}>

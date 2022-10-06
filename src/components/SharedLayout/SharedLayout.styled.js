@@ -31,8 +31,4 @@ export const Link = styled(NavLink)`
   &.active {
     color: pink;
   }
-  :hover,
-  :focus-visible {
-    text-decoration: underline;
-  }
 `;

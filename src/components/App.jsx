@@ -2,12 +2,13 @@ import { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import { SharedLayout } from "./SharedLayout/SharedLayout";
 
+const Home = lazy(() => import('../pages/Home/Home'))
 export const App = () => {
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
-        {/* <Route index element={<Home />} />
-        <Route path="about" element={<About />}>
+        <Route index element={<Home />} />
+        {/* <Route path="about" element={<About />}>
           <Route path="mission" element={<Mission />} />
           <Route path="team" element={<Team />} />
           <Route path="reviews" element={<Reviews />} />
