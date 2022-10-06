@@ -1,13 +1,18 @@
+import { useEffect, useState } from 'react';
+import { fetchTrending } from '../../services/movieApi';
+import MoviesList from 'components/MoviesList/MoviesList';
+
 const Home = () => {
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    fetchTrending().then(response => setMovies(response?.results ?? []));
+  }, []);
+
   return (
     <main>
-      <h1>Welcome</h1>
-      <img src="https://via.placeholder.com/960x240" alt="" />
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto,
-        laboriosam placeat incidunt rem illum animi nemo quibusdam quia
-        voluptatum voluptate.
-      </p>
+      <h1>Popular now</h1>
+      <MoviesList items={movies} />
     </main>
   );
 };
