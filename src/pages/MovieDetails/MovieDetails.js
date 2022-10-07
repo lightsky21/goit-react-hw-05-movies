@@ -15,7 +15,7 @@ const MovieDetails = () => {
   }, [id]);
   return (
     <main>
-      <BackLink to={backLinkHref}>Back to products</BackLink>
+      <BackLink to={backLinkHref}> Go back</BackLink>
 
       {movie && (
         <>
@@ -49,11 +49,15 @@ const MovieDetails = () => {
           </Wrapper>
           <ul>
             <li>
-              <Link to="cast">Cast</Link>
+              <Link to="cast" state={{ from: backLinkHref }}>
+                Cast
+              </Link>
             </li>
 
             <li>
-              <NavItem to="reviews">Reviews</NavItem>
+              <NavItem to="reviews" state={{ from: backLinkHref }}>
+                Reviews
+              </NavItem>
             </li>
           </ul>
           <Suspense fallback={<div>Loading subpage...</div>}>
